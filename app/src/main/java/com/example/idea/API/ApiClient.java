@@ -5,7 +5,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
-    private static final String BASE_URL = "https://imdb-top-100-movies.p.rapidapi.com/";
+    private static final String BASE_URL = "https://imdb-top-100-movies.p.rapidapi.com";
     static Retrofit retrofit;
 
     public static Retrofit getRetrofit() {

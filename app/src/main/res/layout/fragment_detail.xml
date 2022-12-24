@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Fragment.DetailFragment">
+
+   <TextView
+       android:id="@+id/movieNameText"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/movie_text_2"
+       android:textSize="30sp"
+       android:textStyle="bold"
+       android:textColor="@color/cardview_dark_background"
+       android:gravity="center"
+       android:layout_marginTop="15dp"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toTopOf="parent" />
+
+   <TextView
+       android:id="@+id/directorText"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="@string/director_text"
+       android:textSize="16sp"
+       android:textColor="@color/cardview_dark_background"
+       android:textStyle="italic"
+       android:layout_marginTop="10dp"
+       app:layout_constraintStart_toStartOf="@+id/movieNameText"
+       app:layout_constraintTop_toBottomOf="@+id/movieNameText" />
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="vertical"
+       android:padding="10dp"
+       android:layout_margin="20dp"
+       android:background="@drawable/corner_background"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintTop_toBottomOf="@+id/directorText">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+
+         <TextView
+             android:id="@+id/textView"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_marginStart="10dp"
+             android:layout_marginEnd="20dp"
+             android:layout_marginTop="20dp"
+             android:layout_marginBottom="20dp"
+             android:text="@string/overview"
+             android:textColor="@color/white"
+             android:textSize="24sp"
+             android:textStyle="bold"
+             android:layout_gravity="center"/>
+
+         <TextView
+             android:id="@+id/genreText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/drama"
+             android:textColor="@color/white"
+             android:textSize="14sp"
+             android:padding="10dp"
+             android:layout_marginTop="20dp" />
+
+         <ImageView
+             android:id="@+id/starImage"
+             android:layout_width="15dp"
+             android:layout_height="15dp"
+             android:layout_marginStart="30dp"
+             android:layout_marginEnd="10dp"
+             android:padding="10dp"
+             android:background="@drawable/ic_star"
+             android:layout_gravity="center"
+             tools:ignore="ContentDescription" />
+
+         <TextView
+             android:id="@+id/ratingText"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center"
+             android:text="@string/rating_text"
+             android:textColor="@color/white"
+             android:textSize="14sp" />
+
+      </LinearLayout>
+
+      <TextView
+          android:id="@+id/descriptionText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/description"
+          android:textColor="@color/white"
+          android:textSize="18sp"
+          android:padding="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+      <TextView
+          android:id="@+id/writersText"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/writes_text"
+          android:textColor="@color/white"
+          android:textSize="14sp"
+          android:padding="10dp"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/descriptionText" />
+
+   </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
