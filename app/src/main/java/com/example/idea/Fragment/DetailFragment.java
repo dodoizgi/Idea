@@ -34,7 +34,8 @@ public class DetailFragment extends Fragment {
 
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        getMovieById();
+        String id = DetailFragmentArgs.fromBundle(getArguments()).getMovieId();
+        getMovieById(id);
     }
 
     @Override
@@ -43,9 +44,9 @@ public class DetailFragment extends Fragment {
         binding = null;
     }
 
-    private void getMovieById() {
+    private void getMovieById(String id) {
         ServiceAPI serviceAPI = ApiClient.getRetrofit().create(ServiceAPI.class);
-        Call<Movie> call = serviceAPI.getMovieById("top16");
+        Call<Movie> call = serviceAPI.getMovieById(id);
         call.enqueue(new Callback<Movie>() {
             @Override
             public void onResponse(@NonNull Call<Movie> call, @NonNull Response<Movie> response) {
@@ -58,6 +59,7 @@ public class DetailFragment extends Fragment {
                 binding.genreText.setText(convertArrayToString(movie.getGenre()));
                 binding.descriptionText.setText(movie.getDescription());
                 binding.ratingText.setText(movie.getRating());
+                binding.rankText.setText(String.format("Rank : %s", movie.getRank()));
                 binding.writersText.setText(String.format("Directors \n\n%s", convertArrayToString(movie.getWriters())));
             }
 

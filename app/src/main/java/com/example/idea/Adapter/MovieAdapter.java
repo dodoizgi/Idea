@@ -5,10 +5,13 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavAction;
+import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.idea.API.response.Movie;
+import com.example.idea.Fragment.ListFragmentDirections;
 import com.example.idea.R;
 import com.example.idea.databinding.MovieItemBinding;
 
@@ -36,11 +39,11 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
 
         holder.binding.movieNameTextView.setText(movie.getTitle());
         holder.binding.ratingText.setText(movie.getRating());
-        holder.binding.yearTextView.setText("" + movie.getYear());
+        holder.binding.yearTextView.setText(String.format("Year : %s", movie.getYear()));
 
         holder.binding.movieItem.setOnClickListener(view -> {
-            Navigation.findNavController(view).navigate(R.id.action_ListFragment_to_DetailFragment);
-
+            NavDirections action = ListFragmentDirections.actionListFragmentToDetailFragment(movie.getId());
+            Navigation.findNavController(view).navigate(action);
         });
     }
 
